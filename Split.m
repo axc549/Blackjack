@@ -23,7 +23,7 @@ for player = 1:numplayers
                 row = row+1;
             else
                 fprintf('\n%s is up\n',playerStruct(player).name)
-                fprintf('Now looking at hand #%d: the %s %s %s and the %s %s %s.\n',row,cardtext1{:},cardtext2{:})
+                fprintf('Now looking at hand #%d: the %s and the %s.\n',row,cardtext1,cardtext2)
                 % asks if wants to split
                 choice = ChoiceMenu(playerStruct,player,1);
                 if choice == 1
@@ -44,7 +44,7 @@ for player = 1:numplayers
                     [~,cardtext3] = CardInfo(card3);
                     [Deck,playerStruct,selector,~,card4] = DealCard(Deck,playerStruct,selector,player,r+1,2); 
                     [~,cardtext4] = CardInfo(card4);
-                    fprintf('Dealt a %s %s %s to the %s %s %s and a %s %s %s to the %s %s %s\n',cardtext3{:},cardtext1{:},cardtext4{:},cardtext2{:})
+                    fprintf('Dealt a %s to the %s and a %s to the %s\n',cardtext3,cardtext1,cardtext4,cardtext2)
                     %Expand player.win and player.money
                     playerStruct(player).win = [playerStruct(player).win 0];
                     playerStruct(player).money = [playerStruct(player).money playerStruct(player).money(2)];

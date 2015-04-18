@@ -12,12 +12,12 @@ for player = 1:numplayers
             showscore = 1;
             [cardtext1,cardtext2] = ShowCards(playerStruct,player,row);
             if r == 1
-                fprintf('\nPlayer #%d is up.\n Cards are: %s %s %s and %s %s %s.\n',player,cardtext1{:}, cardtext2{:})
+                fprintf('\nPlayer #%d is up.\n Cards are: %s and %s.\n',player,cardtext1, cardtext2)
             else
                 if row == 1
-                    fprintf('\nPlayer #%d is up. Hand #1 cards are: %s %s %s and %s %s %s.\n',player,cardtext1{:}, cardtext2{:})
+                    fprintf('\nPlayer #%d is up. Hand #1 cards are: %s and %s.\n',player,cardtext1, cardtext2)
                 else
-                    fprintf('\nPlayer #%d Hand #%d cards are: %s %s %s and %s %s %s.\n',player,row,cardtext1{:}, cardtext2{:})
+                    fprintf('\nPlayer #%d Hand #%d cards are: %s and %s.\n',player,row,cardtext1, cardtext2)
                 end
             end
         end
@@ -37,7 +37,7 @@ for player = 1:numplayers
                 if choice == 2
                     [Deck,playerStruct,selector,movenext,card] = DealCard(Deck,playerStruct,selector,player,row,movenext);
                     [~,cardtext] = CardInfo(card);
-                    fprintf('Dealt: %s %s %s.\n', cardtext{:})
+                    fprintf('Dealt: %s.\n', cardtext)
                 end
             end
         end
@@ -52,5 +52,6 @@ for player = 1:numplayers
             playerStruct(player).win(row) = -1;
         end
     end
+    pause(0.5)
 end
 end

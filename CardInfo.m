@@ -16,6 +16,6 @@ else
     end
     suit = ceil(card/13);
     suittype = suitList(suit);
-    cardtext = [valuetype,'of',suittype];
+    cardtext = sprintf('%s of %s',valuetype{:},suittype{:});
 end
 end

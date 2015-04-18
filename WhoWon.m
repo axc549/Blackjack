@@ -59,10 +59,4 @@ else
     end
 end
 fprintf('\n\n')
-
-%{
-    TO DO:
-    have config on payout
-    0 out necessary?
-%}
 end

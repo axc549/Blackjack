@@ -3,7 +3,7 @@ function [playerStruct,selector,movenext]=TheDealer(Deck,playerStruct,selector,n
     player = numplayers+1;
     % show cards
     [cardtext1,cardtext2] = ShowCards(playerStruct,player,1);
-    fprintf('\nDealer is up. Dealer has a: %s %s %s and a %s %s %s.\n',cardtext1{:}, cardtext2{:})
+    fprintf('\nDealer is up. Dealer has a: %s and a %s.\n',cardtext1, cardtext2)
     
     while BestScore(playerStruct,player,1) < 17
         if sum(playerStruct(player).cards(1:5)) < 17 && playerStruct(player).cards(5) ~= 0   %for splits, going to have to make it select the right row
@@ -12,7 +12,7 @@ function [playerStruct,selector,movenext]=TheDealer(Deck,playerStruct,selector,n
         else
             [Deck,playerStruct,selector,movenext,card] = DealCard(Deck,playerStruct,selector,player,1,movenext);
             [~,cardtext] = CardInfo(card);
-            fprintf('Dealer dealt: %s %s %s\n',cardtext{:})
+            fprintf('Dealer dealt: %s\n',cardtext{:})
         end
     end
     if BestScore(playerStruct,player,1) > 21
